@@ -14,7 +14,7 @@ public class BetterWithDrills implements ModInitializer {
     public static final String MOD_ID = "betterwithdrills";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    public static final Item toolDrillIron = ItemHelper.createItem(MOD_ID, new ItemToolDrill("tool.drill.iron", 30000, ToolMaterial.iron),"tool.drill.iron", "PickHolystone.png");
+    public static final Item toolDrillIron = ItemHelper.createItem(MOD_ID, new ItemToolDrill("tool.drill.iron", 30000, ToolMaterial.iron),"tool.drill.iron", "DrillIron.png");
 
     @Override
     public void onInitialize() {
