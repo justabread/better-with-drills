@@ -7,10 +7,13 @@ import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ToolMaterial;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
-import net.minecraft.core.util.helper.Direction;
+import net.minecraft.core.util.helper.Side;
 import net.minecraft.client.Minecraft;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ItemToolDrill extends ItemToolPickaxe {
+	public static final Logger LOGGER = LoggerFactory.getLogger("betterwithdrills");
 	public ItemToolDrill (String name, int id, ToolMaterial enumtoolmaterial) {
 		super(name, id, enumtoolmaterial);
 	}
@@ -39,11 +42,10 @@ public class ItemToolDrill extends ItemToolPickaxe {
 		for(int x = -1; x <= 1; x++) {
 			for(int y = -1; y <= 1; y++ ) {
 				if(!(x == 0 && y == 0)) {
-					switch(Direction.getDirection(player)) {
+					switch(mc.objectMouseOver.side) {
 						case WEST:
 						case EAST:
 							DestroyNeighborBlock(j, k + x, l + y);
-
 							break;
 
 						case SOUTH:
@@ -51,8 +53,8 @@ public class ItemToolDrill extends ItemToolPickaxe {
 							DestroyNeighborBlock(j + x, k + y, l);
 							break;
 
-						case DOWN:
-						case UP:
+						case BOTTOM:
+						case TOP:
 							DestroyNeighborBlock(j + x, k, l + y);
 							break;
 					}

@@ -2,6 +2,7 @@ package justabread.betterwithdrills;
 
 import justabread.betterwithdrills.item.ItemToolDrill;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.material.ToolMaterial;
 import turniplabs.halplibe.helper.*;
@@ -18,5 +19,7 @@ public class BetterWithDrills implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("Better With Drills initialized.");
+
+		RecipeHelper.Crafting.createRecipe(BetterWithDrills.toolDrillIron, 1, new Object[]{" E ", "IRP", " CP", 'E', Item.repeater, 'I', Item.ingotIron, 'R', Item.dustRedstone, 'P', Block.planksOak, 'C', Block.cobbleStone});
     }
 }
