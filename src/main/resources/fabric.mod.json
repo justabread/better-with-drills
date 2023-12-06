@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "betterwithdrills",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "Better With Drills",
+  "description": "This mod aims to add drills and quality of life items.",
   "authors": [
-    "Turnip Labs"
+    "Justabread"
   ],
   "contact": {
     "homepage": "",
@@ -18,11 +18,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-        "turniplabs.examplemod.ExampleMod"
+        "justabread.betterwithdrills.BetterWithDrills"
     ]
   },
   "mixins": [
-      "examplemod.mixins.json"
+    "betterwithdrills.mixins.json"
   ],
 
   "depends": {

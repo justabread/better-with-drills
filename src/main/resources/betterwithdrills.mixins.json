@@ -1,7 +1,7 @@
 {
     "required": true,
     "minVersion": "0.8",
-    "package": "turniplabs.examplemod.mixin",
+    "package": "justabread.betterwithdrills.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
     ],
