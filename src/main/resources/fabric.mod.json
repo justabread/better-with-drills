@@ -4,11 +4,12 @@
   "version": "${version}",
 
   "name": "Better With Drills",
-  "description": "This mod aims to add drills and quality of life items.",
+  "description": "Adds drills and other quality of life items.",
   "authors": [
     "Justabread"
   ],
-  "contact": {
+	"icon": "icon.png",
+	"contact": {
     "homepage": "",
     "sources": ""
   },

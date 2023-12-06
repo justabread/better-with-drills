@@ -12,3 +12,6 @@ A mod to implement drills and other quality of life tools into Better Than Adven
 
 ### Design
 - [ ] Create art for drills to replace placeholder pickaxe
+
+## Bugs
+- Drill doesn't get damaged when mining something it can't properly mine
