@@ -5,6 +5,7 @@ import justabread.betterwithdrills.util.Vect3dInt;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
+import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ToolMaterial;
@@ -21,16 +22,17 @@ public class ItemToolDrill extends ItemToolPickaxe {
     public ItemToolDrill(String name, int id, ToolMaterial enumtoolmaterial) {
         super(name, id, enumtoolmaterial);
     }
-    public boolean TryDestroyBlock(int x, int y, int z) {
+    public boolean TryDestroyBlock(int x, int y, int z, EntityLiving entityLiving) {
         int id = mc.theWorld.getBlockId(x, y, z);
         int meta = mc.theWorld.getBlockMetadata(x, y, z);
 
+        Block block = Block.getBlock(id);
         TileEntity tileEntity = mc.theWorld.getBlockTileEntity(x, y, z);
+        ItemStack item = mc.thePlayer.getCurrentEquippedItem();
 
-        if(Block.getBlock(id) != null && canHarvestBlock(Block.getBlock(id))) {
+        if(block != null && canHarvestBlock(block)) {
             boolean removed = mc.theWorld.setBlockWithNotify(x, y, z, 0);
-            ItemStack item = mc.thePlayer.getCurrentEquippedItem();
-
+            DamageItem(item, entityLiving, block);
             if (removed && mc.thePlayer.getGamemode().dropBlockOnBreak) {
                 Block.blocksList[id].harvestBlock(mc.theWorld, mc.thePlayer, x, y, z, meta, tileEntity);
             }
@@ -43,6 +45,12 @@ public class ItemToolDrill extends ItemToolPickaxe {
         }
 
         return false;
+    }
+
+    public void DamageItem(ItemStack item, EntityLiving entityLiving, Block block) {
+        if (item != null && (block.getHardness() > 0.0F || this.isSilkTouch())) {
+            item.damageItem(1, entityLiving);
+        }
     }
 
     public ItemStack SwitchDrillType(ItemStack itemstack, World world, EntityPlayer entityplayer, boolean toOreMiner) {

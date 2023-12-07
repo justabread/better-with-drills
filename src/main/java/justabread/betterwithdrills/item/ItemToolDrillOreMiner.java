@@ -8,9 +8,7 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ToolMaterial;
 import net.minecraft.core.world.World;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.HashSet;
+import java.util.*;
 
 public class ItemToolDrillOreMiner extends ItemToolDrill {
 
@@ -20,12 +18,10 @@ public class ItemToolDrillOreMiner extends ItemToolDrill {
 
     @Override
     public boolean onBlockDestroyed(ItemStack itemstack, int i, int j, int k, int l, EntityLiving entityliving) {
-        HashSet<Vect3dInt> blocksToMine = new HashSet<>();
-
         if(Block.getBlock(i).getKey().contains("ore")) {
-            blocksToMine.add(new Vect3dInt(j, k, l));
+            HashSet<Vect3dInt> blocksToMine = new HashSet<>(Collections.singletonList(new Vect3dInt(j, k, l)));
             int iterator = 0;
-            boolean finishedStack = false;
+            boolean finishedStack;
 
             do {
                 for (int x = -1; x <= 1; x++) {
@@ -49,8 +45,10 @@ public class ItemToolDrillOreMiner extends ItemToolDrill {
             }while (!finishedStack);
 
             for(Vect3dInt coord : blocksToMine) {
-                TryDestroyBlock(coord.getX(), coord.getY(), coord.getZ());
+                TryDestroyBlock(coord.getX(), coord.getY(), coord.getZ(), entityliving);
             }
+        }else {
+            super.onBlockDestroyed(itemstack, i, j, k, l, entityliving);
         }
 
         return true;

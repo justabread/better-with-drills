@@ -15,39 +15,30 @@ public class ItemToolDrillTunneler extends ItemToolDrill {
 	public boolean onBlockDestroyed(ItemStack itemstack, int i, int j, int k, int l, EntityLiving entityliving) {
 		Block minedBlock = Block.getBlock(i);
 		if(canHarvestBlock(minedBlock)) {
-			int blockDestroyedCounter = 0;
-
 			for(int x = -1; x <= 1; x++) {
 				for(int y = -1; y <= 1; y++ ) {
 					if(!(x == 0 && y == 0)) {
 						switch(mc.objectMouseOver.side) {
 							case WEST:
 							case EAST:
-								TryDestroyBlock(j, k + x, l + y);
+								TryDestroyBlock(j, k + x, l + y, entityliving);
 								break;
 
 							case SOUTH:
 							case NORTH:
-								TryDestroyBlock(j + x, k + y, l);
+								TryDestroyBlock(j + x, k + y, l, entityliving);
 								break;
 
 							case BOTTOM:
 							case TOP:
-								TryDestroyBlock(j + x, k, l + y);
+								TryDestroyBlock(j + x, k, l + y, entityliving);
 								break;
 						}
-
-						blockDestroyedCounter++;
 					}
 				}
 			}
-
-			Block block = Block.getBlock(i);
-			if (block != null && (block.getHardness() > 0.0F || this.isSilkTouch())) {
-				for(int count = 0; count < blockDestroyedCounter; count++) {
-					itemstack.damageItem(1, entityliving);
-				}
-			}
+		}else {
+			super.onBlockDestroyed(itemstack, i, j, k, l, entityliving);
 		}
 
 		return true;
