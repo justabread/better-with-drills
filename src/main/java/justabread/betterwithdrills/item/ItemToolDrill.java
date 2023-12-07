@@ -1,7 +1,6 @@
 package justabread.betterwithdrills.item;
 
 import justabread.betterwithdrills.BetterWithDrills;
-import justabread.betterwithdrills.util.Vect3dInt;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
@@ -13,8 +12,6 @@ import net.minecraft.core.item.tool.ItemToolPickaxe;
 import net.minecraft.core.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.HashSet;
 
 public class ItemToolDrill extends ItemToolPickaxe {
     public static final Logger LOGGER = LoggerFactory.getLogger("betterwithdrills");
