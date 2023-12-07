@@ -8,7 +8,7 @@ A mod to implement drills and other quality of life tools into Better Than Adven
 - [x] ~~Add drill tool~~
 - [x] ~~Add drill tool materials instead of the quick to break pickaxe ones~~ 
 - [x] ~~Add crafting recipes for drills~~
-- [ ] Create functionality to switch between Tunnel (3x3) and OreMiner (Mine one block and destroy all connected ore blocks) modes
+- [x] ~~Create functionality to switch between Tunnel (3x3) and OreMiner (Mine one block and destroy all connected ore blocks) modes~~
 
 ### Design
 - [x] ~~Create art for drills~~
