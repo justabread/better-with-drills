@@ -71,25 +71,4 @@ public class ItemToolDrill extends ItemToolPickaxe {
                 return itemstack;
         }
     }
-
-    public boolean FindOreInNeighbors(int i, int j, int k, int l, HashSet<Vect3dInt> blocksToMine) {
-        boolean addedBlock = false;
-
-        for (int x = -1; x <= 1; x++) {
-            for (int y = -1; y <= 1; y++) {
-                for (int z = -1; z <= 1; z++) {
-                    if(!(x == 0 && y == 0 && z == 0)){
-                        Vect3dInt checkedBlockCoords = new Vect3dInt(j + x, k + y, l + z);
-                        int checkedBlockId = mc.theWorld.getBlockId(checkedBlockCoords.getX(), checkedBlockCoords.getY(), checkedBlockCoords.getZ());
-                        if(checkedBlockId == i) {
-                            blocksToMine.add(checkedBlockCoords);
-                            addedBlock = true;
-                        }
-                    }
-                }
-            }
-        }
-
-        return addedBlock;
-    }
 }
