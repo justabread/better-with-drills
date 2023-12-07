@@ -6,12 +6,12 @@ A mod to implement drills and other quality of life tools into Better Than Adven
 
 ### Functionality:
 - [x] ~~Add drill tool~~
-- [ ] Add drill tool materials instead of the quick to break pickaxe ones 
-- [x] ~~Add crafting recipe for drill~~
-- [ ] Add shape class to be able to use more than one hard coded 3x3 shape (May stick with 3x3 shapes have not decided yet will leave this here as a placeholder)
+- [x] ~~Add drill tool materials instead of the quick to break pickaxe ones~~ 
+- [x] ~~Add crafting recipes for drills~~
+- [ ] Create functionality to switch between Tunnel (3x3) and OreMiner (Mine one block and destroy all connected ore blocks) modes
 
 ### Design
-- [ ] Create art for drills
+- [x] ~~Create art for drills~~
   - [x] ~~Art for Iron Drill~~
   - [x] ~~Replace placeholder pickaxe~~
 
