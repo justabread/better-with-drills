@@ -1,2 +1,19 @@
 item.betterwithdrills.tool.drill.iron.name=Iron Drill
-item.betterwithdrills.tool.drill.iron.desc=Mine a 3x3 area with this state of the art drill.
+item.betterwithdrills.tool.drill.iron.desc=A standard drill with an iron drill head.
+item.betterwithdrills.tool.drill.oreminer.iron.name=Iron Drill (Ore Miner)
+item.betterwithdrills.tool.drill.oreminer.iron.desc=A standard drill with an iron drill head set to mine all connected ores.
+
+item.betterwithdrills.tool.drill.steel.name=Steel Drill
+item.betterwithdrills.tool.drill.steel.desc=An extremely durable drill.
+item.betterwithdrills.tool.drill.oreminer.steel.name=Steel Drill (Ore Miner)
+item.betterwithdrills.tool.drill.oreminer.steel.desc=An extremely durable drill set to mine all connected ores.
+
+item.betterwithdrills.tool.drill.diamond.name=Diamond Drill
+item.betterwithdrills.tool.drill.diamond.desc=The most efficient drill.
+item.betterwithdrills.tool.drill.oreminer.diamond.name=Diamond Drill (Ore Miner)
+item.betterwithdrills.tool.drill.oreminer.diamond.desc=The most efficient drill set to mine all connected ores.
+
+item.betterwithdrills.tool.drill.gold.name=Gold Drill
+item.betterwithdrills.tool.drill.gold.desc=A drill capable of silk touch with the tradeoff of being incredibly brittle.
+item.betterwithdrills.tool.drill.oreminer.gold.name=Gold Drill (Ore Miner)
+item.betterwithdrills.tool.drill.oreminer.gold.desc=A drill capable of silk touch with the tradeoff of being incredibly brittle set to mine all connected ores.
