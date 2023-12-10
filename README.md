@@ -16,4 +16,5 @@ A mod to implement drills and other quality of life tools into Better Than Adven
   - [x] ~~Replace placeholder pickaxe~~
 
 ## Bugs
-- Drill doesn't get damaged when mining something it can't properly mine
+- ~~Drill doesn't get damaged when mining something it can't properly mine~~
+- Redstone does not trigger OreMine function
