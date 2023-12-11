@@ -15,7 +15,7 @@ import java.util.*;
 public class ToolUtils {
 	public static Minecraft mc = Minecraft.getMinecraft(Minecraft.class);
 	public static final Logger LOGGER = LoggerFactory.getLogger("betterwithdrills");
-	public static boolean TryDestroyBlock(int x, int y, int z, EntityLiving entityLiving, ItemTool tool) {
+	public static boolean TryDestroyBlock(int x, int y, int z, EntityLiving entityLiving, ItemTool tool, Vect3dInt originalBlockCoords) {
 		int id = mc.theWorld.getBlockId(x, y, z);
 		int meta = mc.theWorld.getBlockMetadata(x, y, z);
 
@@ -27,7 +27,7 @@ public class ToolUtils {
 			boolean removed = mc.theWorld.setBlockWithNotify(x, y, z, 0);
 			DamageItem(tool, item, entityLiving, block);
 			if (removed && mc.thePlayer.getGamemode().dropBlockOnBreak) {
-				Block.blocksList[id].harvestBlock(mc.theWorld, mc.thePlayer, x, y, z, meta, tileEntity);
+				Block.blocksList[id].harvestBlock(mc.theWorld, mc.thePlayer, originalBlockCoords.getX(), originalBlockCoords.getY(), originalBlockCoords.getZ(), meta, tileEntity);
 			}
 
 			if (item != null && item.stackSize <= 0) {
@@ -82,7 +82,7 @@ public class ToolUtils {
 		blocksToMine.remove(0);
 
 		for(Vect3dInt coord : blocksToMine) {
-			TryDestroyBlock(coord.getX(), coord.getY(), coord.getZ(), entityLiving, tool);
+			TryDestroyBlock(coord.getX(), coord.getY(), coord.getZ(), entityLiving, tool, new Vect3dInt(j, k, l));
 		}
 	}
 
@@ -93,17 +93,17 @@ public class ToolUtils {
 					switch(ToolUtils.mc.objectMouseOver.side) {
 						case WEST:
 						case EAST:
-							ToolUtils.TryDestroyBlock(j, k + x, l + y, entityLiving, tool);
+							ToolUtils.TryDestroyBlock(j, k + x, l + y, entityLiving, tool, new Vect3dInt(j, k, l));
 							break;
 
 						case SOUTH:
 						case NORTH:
-							ToolUtils.TryDestroyBlock(j + x, k + y, l, entityLiving, tool);
+							ToolUtils.TryDestroyBlock(j + x, k + y, l, entityLiving, tool, new Vect3dInt(j, k, l));
 							break;
 
 						case BOTTOM:
 						case TOP:
-							ToolUtils.TryDestroyBlock(j + x, k, l + y, entityLiving, tool);
+							ToolUtils.TryDestroyBlock(j + x, k, l + y, entityLiving, tool, new Vect3dInt(j, k, l));
 							break;
 					}
 				}
