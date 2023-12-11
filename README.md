@@ -11,6 +11,7 @@ A mod to implement drills and other quality of life tools into Better Than Adven
 - [x] ~~Create functionality to switch between Tunnel (3x3) and OreMiner (Mine one block and destroy all connected ore blocks) modes~~
 - [x] ~~Add chainsaw tool~~
 - [x] ~~Expand drill tool to dirt and gravel too~~
+- [x] Drop mined block items at the location of the originally mined block
 
 ### Design
 - [x] ~~Create art for drills~~
