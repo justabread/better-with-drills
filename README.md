@@ -2,6 +2,13 @@
 
 A mod to implement drills and other quality of life tools into Better Than Adventure for an immersive and expanded mining experience!
 
+## Usuage
+- Mine a block with the drill as usual to make 3x3 tunnels
+- Right click to switch drill to OreMiner mode, which mines all the connected blocks of the originally mined ore
+- Craft a chainsaw to chop down trees in an instant
+
+Move the cursor over the drill and hold left ctrl, to know more about each drills's advantages and quirks!
+
 ## Upcoming features list
 
 ### Functionality:
@@ -11,7 +18,7 @@ A mod to implement drills and other quality of life tools into Better Than Adven
 - [x] ~~Create functionality to switch between Tunnel (3x3) and OreMiner (Mine one block and destroy all connected ore blocks) modes~~
 - [x] ~~Add chainsaw tool~~
 - [x] ~~Expand drill tool to dirt and gravel too~~
-- [x] Drop mined block items at the location of the originally mined block
+- [x] ~~Drop mined block items at the location of the originally mined block~~
 
 ### Design
 - [x] ~~Create art for drills~~
