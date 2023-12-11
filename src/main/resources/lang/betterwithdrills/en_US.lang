@@ -17,3 +17,6 @@ item.betterwithdrills.tool.drill.gold.name=Gold Drill
 item.betterwithdrills.tool.drill.gold.desc=A drill capable of silk touch with the tradeoff of being incredibly brittle.
 item.betterwithdrills.tool.drill.oreminer.gold.name=Gold Drill (Ore Miner)
 item.betterwithdrills.tool.drill.oreminer.gold.desc=A drill capable of silk touch with the tradeoff of being incredibly brittle set to mine all connected ores.
+
+item.betterwithdrills.tool.chainsaw.name=Chainsaw
+item.betterwithdrills.tool.chainsaw.desc=A modern chainsaw, capable of cutting down trees in an instant.

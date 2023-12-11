@@ -23,9 +23,14 @@ public class Vect3dInt {
         return z;
     }
 
-    @Override
+	@Override
+	public String toString() {
+		return "X:" + x + ", " + "Y:" + y + ", " + "Z:" + z;
+	}
+
+	@Override
     public int hashCode() {
-        return x+y+z;
+        return x + (y*2) + (z*2);
     }
 
     @Override
