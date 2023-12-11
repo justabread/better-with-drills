@@ -1,11 +1,14 @@
-package justabread.betterwithdrills.item;
+package justabread.betterwithdrills.item.drill;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ToolMaterial;
 import net.minecraft.core.world.World;
+
+import justabread.betterwithdrills.item.util.ToolUtils;
 
 public class ItemToolDrillTunneler extends ItemToolDrill {
 	public ItemToolDrillTunneler(String name, int id, ToolMaterial enumtoolmaterial) {
@@ -15,33 +18,25 @@ public class ItemToolDrillTunneler extends ItemToolDrill {
 	public boolean onBlockDestroyed(ItemStack itemstack, int i, int j, int k, int l, EntityLiving entityliving) {
 		Block minedBlock = Block.getBlock(i);
 		if(canHarvestBlock(minedBlock)) {
-			for(int x = -1; x <= 1; x++) {
-				for(int y = -1; y <= 1; y++ ) {
-					if(!(x == 0 && y == 0)) {
-						switch(mc.objectMouseOver.side) {
-							case WEST:
-							case EAST:
-								TryDestroyBlock(j, k + x, l + y, entityliving);
-								break;
-
-							case SOUTH:
-							case NORTH:
-								TryDestroyBlock(j + x, k + y, l, entityliving);
-								break;
-
-							case BOTTOM:
-							case TOP:
-								TryDestroyBlock(j + x, k, l + y, entityliving);
-								break;
-						}
-					}
-				}
-			}
+			ToolUtils.MineTunnel(j, k, l, entityliving, this);
 		}else {
-			super.onBlockDestroyed(itemstack, i, j, k, l, entityliving);
+			return super.onBlockDestroyed(itemstack, i, j, k, l, entityliving);
 		}
 
 		return true;
+	}
+
+	//Can mine dirt and gravel for more streamlined experience
+	@Override
+	public boolean canHarvestBlock(Block block) {
+		Integer miningLevel = miningLevels.get(block);
+		if(block.getKey().contains("dirt") || block.getKey().contains("gravel") || block.getKey().contains("grass")) {
+			return true;
+		}else if (miningLevel != null) {
+			return this.material.getMiningLevel() >= miningLevel;
+		} else {
+			return block.hasTag(BlockTags.MINEABLE_BY_PICKAXE);
+		}
 	}
 
 	@Override
