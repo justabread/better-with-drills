@@ -19,6 +19,7 @@ Move the cursor over the drill and hold left ctrl, to know more about each drill
 - [x] ~~Add chainsaw tool~~
 - [x] ~~Expand drill tool to dirt and gravel too~~
 - [x] ~~Drop mined block items at the location of the originally mined block~~
+- [ ] Give chainsaw harder material
 
 ### Design
 - [x] ~~Create art for drills~~
